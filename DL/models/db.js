@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 const username = "saramazal";
-const password = "classwork";
-connectionString = `mongodb+srv://${username}:${password}@mongo-lesson.ragui.mongodb.net/mongo-lesson?retryWrites=true&w=majority`
+const password = "#";
+connectionString = `#`
 
 
 exports.connect = async function connect() {
