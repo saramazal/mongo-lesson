@@ -1,19 +1,10 @@
-const express = require("express");
-const app = express();
+const express = require('express')
+const app = express()
 
-app.use(express.json());
-const db = require('./DL/models/db')
+app.use(require('cors')())
+app.use(express.json())
 
-const router = require('./routers')
-app.use(express.static('public'))
+require('./router')(app)
 
-
-db.connect().then(() => {
-    router(app)
-
-    app.listen(3000,
-        () => console.log('server is up'))
-})
-    .catch((err) => {
-        console.error(err);
-    })
+const PORT = 3030
+app.listen(PORT, () => console.log(`Server is running: ${PORT}`))
